@@ -2,14 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Yekan Bakh';
+    font-style: normal;
+    font-weight: normal;
+    src: url("./assets/fonts/Yekan\ Bakh\ Fa\ 04\ Regular.ttf") format("woff2");
+}
+
+@font-face {
+    font-family: 'Yekan Bakh';
+    font-style: normal;
+    font-weight: 500;
+    src: url("./assets/fonts/Yekan\ Bakh\ Fa\ 05\ Medium.ttf") format("woff2");
+}
+
+@font-face {
+    font-family: 'Yekan Bakh';
+    font-style: normal;
+    font-weight: bold;
+    src: url("./assets/fonts/Yekan\ Bakh\ Fa\ 06\ Bold.ttf") format("woff2");
+}
+
+@font-face {
+    font-family: 'Yekan Bakh';
+    font-style: normal;
+    font-weight: 900;
+    src: url("./assets/fonts/Yekan\ Bakh\ Fa\ 07\ Heavy.ttf") format("woff2");
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  direction: rtl;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
 }
 
 body {
-  background-color: #e0e5ff;
-  font-family: ;
+    background-color: #e0e5ff;
+    font-family: 'Yekan Bakh', sans-serif;
 }

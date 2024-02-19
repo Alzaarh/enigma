@@ -1,55 +1,62 @@
 import image from '../assets/images/financial-illustration.svg'
 import logo from '../assets/images/logo.svg'
-import circle from '../assets/images/Ellipse.svg'
 import { useState } from 'react'
 
 export default function Page() {
-  const [tab, setTab] = useState(1)
-  const [phone, setPhone] = useState('')
+    const [tab, setTab] = useState(1)
+    const [phone, setPhone] = useState('')
 
-  return (
-    <div className="h-screen">
-      <div className="flex gap-4 pl-20 py-36 max-h-full">
-        <div className="flex-1">
-          <img src={image} alt="financial illustration" className="h-full" />
-          <img src={circle} className="absolute top-0 left-96 w-full h-full" />
+    return (
+        <div className="h-screen flex items-center overflow-hidden px-6">
+            <div className="max-w-[1400px] mx-auto flex gap-8 py-14 justify-center items-center">
+                <div className="relative">
+                    <div className='w-[40rem] h-[40rem] rounded-full absolute top-1/2 left-14 -translate-y-1/2 bg-gradient-to-tr from-[#3645D0] to-[#3243DC] opacity-10'></div>
+                    <img src={image} alt="financial illustration" className="relative z-10" width="580" />
+                </div>
+                <div className='relative'>
+                    <div className='w-[40rem] h-[40rem] absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 rounded-full' style={{ backgroundImage: "radial-gradient(circle, rgba(232,95,3,0.18) 0%, rgba(232,95,3,0) 75%)" }}></div>
+                    <div className="bg-[#4050E3] rounded-[32px] py-4 text-white flex-1 max-w-lg relative z-10 min-w-max">
+                        <div className="flex pb-4 border-b border-opacity-20 font-medium text-lg">
+                            <h2
+                                className={`border-l pr-16 pl-6 cursor-pointer ${tab === 1 ? 'text-[#F2971F]' : 'text-white'
+                                    }`}
+                            >
+                                ورود/ثبت‌نام با شماره
+                            </h2>
+                            <h2 className="pr-6 pl-20 cursor-pointer">ورود با نام کاربری</h2>
+                        </div>
+                        <div className='py-24 px-14'>
+                            <div className="flex flex-col items-center gap-2">
+                                <h2 className="text-xl font-bold">ترازافزار شرق</h2>
+                                <img src={logo} alt="tarazafzar logo" className="w-24" />
+                            </div>
+                            <div className="text-white">
+
+                                <form className="mt-8 flex flex-col">
+                                    <div className='font-light text-sm mb-3'>
+                                        <p>سلام!</p>
+                                        <label htmlFor='phone'>لطفا شماره موبایل خود را وارد کنید</label>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        placeholder="شماره تلفن"
+                                        className="py-3 px-2.5 rounded-xl text-[#646464]"
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)}
+                                        id='phone'
+                                    />
+                                    <button
+                                        type="submit"
+                                        className="bg-[#E85F03] rounded-xl py-3 px-2.5 font-bold mt-8 shadow-xl shadow-black/15"
+                                    >
+                                        ورود
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div className="bg-[#4050E3] rounded-[32px] py-4 pb-40 text-white flex-1 max-w-xl">
-          <div className="flex pb-4 border-b">
-            <h2
-              className={`border-l pr-20 pl-6 cursor-pointer ${
-                tab === 1 ? 'text-[#F2971F]' : 'text-white'
-              }`}
-            >
-              ورود/ثبت نام با شماره
-            </h2>
-            <h2 className="pr-6 pl-20 cursor-pointer">ورود با نام کاربری</h2>
-          </div>
-          <div className="flex flex-col items-center gap-2 mt-28">
-            <h2 className="text-2xl">ترازافزار شرق</h2>
-            <img src={logo} alt="tarazafzar logo" className="w-24" />
-          </div>
-          <div className="text-white mt-4 text-lg px-14">
-            <p>سلام!</p>
-            <p>لطفا شماره موبایل خود را وارد کنید</p>
-            <form className="mt-2 flex flex-col gap-5">
-              <input
-                type="text"
-                placeholder="شماره تلفن"
-                className="py-3 px-2.5 rounded-xl text-[#646464]"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-              <button
-                type="submit"
-                className="bg-[#E85F03] rounded-xl py-3 px-2.5"
-              >
-                ورود
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+    )
 }
